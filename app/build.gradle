@@ -1,0 +1,50 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace "com.smartautoclicker.app"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.smartautoclicker.app"
+        minSdk 24
+        targetSdk 34
+        versionCode 16
+        versionName "3.6"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs = ['src/main/assets']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation 'com.google.mlkit:text-recognition:16.0.1'
+    // kotlin-stdlib مضمّن تلقائياً من Kotlin Gradle Plugin
+}

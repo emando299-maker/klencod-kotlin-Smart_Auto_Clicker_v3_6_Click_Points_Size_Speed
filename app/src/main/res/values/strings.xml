@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Smart Auto Clicker</string>
+    <string name="accessibility_description">يبحث عن النص المحدد وينقر على العنصر المطابق، مع نافذة عائمة للتحكم.</string>
+</resources>
