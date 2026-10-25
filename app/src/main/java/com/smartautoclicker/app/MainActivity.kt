@@ -152,15 +152,15 @@ class MainActivity : Activity() {
             row.addView(enabled, LinearLayout.LayoutParams(dp(46), dp(44)))
             val x = EditText(this).apply {
                 hint = "X"; inputType = android.text.InputType.TYPE_CLASS_NUMBER
-                setTextColor(white); setHintTextColor(muted); textSize = 13f; singleLine = true
+                setTextColor(white); setHintTextColor(muted); textSize = 13f; setSingleLine(true)
                 background = rounded(Color.rgb(12, 31, 59), 8); setPadding(dp(8), dp(5), dp(8), dp(5))
                 setText(prefs.getInt("point_x_${i + 1}", 0).takeIf { it > 0 }?.toString() ?: "")
             }
             pointXInputs[i] = x
             row.addView(x, LinearLayout.LayoutParams(0, dp(42), 1f).apply { marginEnd = dp(6) })
             val y = EditText(this).apply {
-                hint = "Y"; inputType = android.text.InputType.TYPE_CLASS_NUMBER
-                setTextColor(white); setHintTextColor(muted); textSize = 13f; singleLine = true
+                hint = "Y"; inputType = android.text.InputType.TYPE_CLASS_NUMBER]
+                setTextColor(white); setHintTextColor(muted); textSize = 13f; setSingleLine(true)
                 background = rounded(Color.rgb(12, 31, 59), 8); setPadding(dp(8), dp(5), dp(8), dp(5))
                 setText(prefs.getInt("point_y_${i + 1}", 0).takeIf { it > 0 }?.toString() ?: "")
             }
